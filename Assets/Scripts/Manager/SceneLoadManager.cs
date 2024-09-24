@@ -6,6 +6,13 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// 一个Manager脚本 负责场景转换相关逻辑 
+/// 场景转换的主体是OnLoadScene函数 负责接收场景转换的消息 以及启动卸载旧场景、加载新场景、过场动画等功能的相关函数 
+/// 遵循观察者模式的思维 该脚本装载在场景“Persistent”的物体“SceneLoadManager”上
+/// Persistent场景始终存在 里面保存着所有的Manager 负责游戏的内部逻辑实现
+/// </summary>
+
 public class SceneLoadManager : MonoBehaviour
 {
     [Header("场景")]
